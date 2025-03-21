@@ -43,7 +43,7 @@ export const LocationSection = () => {
             </div>
 
             {/* Trongsa*/}
-            <div className={`relative overflow-hidden rounded-xl `}>
+            <div className={`relative overflow-hidden rounded-xl  `}>
               <Link href="/home/destinations">
                 <Image
                   src={"/destinations/trongsa.webp"}
