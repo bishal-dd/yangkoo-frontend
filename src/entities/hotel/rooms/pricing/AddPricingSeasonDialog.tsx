@@ -7,7 +7,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { DateRangePicker } from "@/components/ui/date-month-range-picker";
+import { DateMonthRangePicker } from "@/components/ui/date-month-range-picker";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { DateRange } from "react-day-picker";
@@ -77,7 +77,7 @@ export function AddPricingSeasonDialog({
             <label htmlFor="season" className="text-sm font-medium">
               Season
             </label>
-            <DateRangePicker
+            <DateMonthRangePicker
               date={dateRangeUI}
               setDate={setDateRangeUI}
               setDateRange={setDateRange}
