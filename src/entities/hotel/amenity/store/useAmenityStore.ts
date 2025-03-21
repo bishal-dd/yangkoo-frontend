@@ -15,29 +15,45 @@ export const useAmenityStore = create<AmenityState>((set) => ({
   pendingAmenities: new Set(),
   errors: new Map(),
 
-  toggleAmenity: (amenityId) =>
+  toggleAmenity: (amenityId) => {
     set((state) => {
       const newSet = new Set(state.selectedAmenities);
-      newSet.has(amenityId) ? newSet.delete(amenityId) : newSet.add(amenityId);
+      if (newSet.has(amenityId)) {
+        newSet.delete(amenityId);
+      } else {
+        newSet.add(amenityId);
+      }
       return { selectedAmenities: newSet };
-    }),
+    });
+  },
 
-  setPending: (amenityId, state) =>
+  setPending: (amenityId, state) => {
     set((store) => {
       const newSet = new Set(store.pendingAmenities);
-      state ? newSet.add(amenityId) : newSet.delete(amenityId);
+      if (state) {
+        newSet.add(amenityId);
+      } else {
+        newSet.delete(amenityId);
+      }
       return { pendingAmenities: newSet };
-    }),
+    });
+  },
 
-  setError: (amenityId, error) =>
+  setError: (amenityId, error) => {
     set((store) => {
       const newErrors = new Map(store.errors);
-      error ? newErrors.set(amenityId, error) : newErrors.delete(amenityId);
+      if (error) {
+        newErrors.set(amenityId, error);
+      } else {
+        newErrors.delete(amenityId);
+      }
       return { errors: newErrors };
-    }),
+    });
+  },
 
-  initializeAmenities: (amenityIds) =>
+  initializeAmenities: (amenityIds) => {
     set(() => ({
       selectedAmenities: new Set(amenityIds),
-    })),
+    }));
+  },
 }));

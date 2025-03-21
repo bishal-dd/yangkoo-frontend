@@ -3,51 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const images = [
-  {
-    name: "Thimphu",
-    src: "/home/destinations/homeThimphu.avif",
-    width: 500,
-    height: 500,
-    divHeight: "800",
-  },
-
-  {
-    name: "Trongsa",
-    src: "/destinations/trongsa.webp",
-    width: 500,
-    height: 500,
-    divHeight: "400",
-  },
-  {
-    name: "Paro",
-    src: "/home/destinations/homeParo.avif",
-    width: 500,
-    height: 500,
-    divHeight: "400",
-  },
-  {
-    name: "Wangdue Phodrang",
-    src: "/home/destinations/homeWangdue.webp",
-    width: 500,
-    height: 600,
-    divHeight: "800",
-  },
-  {
-    name: "Punakha",
-    src: "/home/destinations/homePunakha.avif",
-    width: 500,
-    height: 500,
-    divHeight: "800",
-  },
-  {
-    name: "Haa",
-    src: "/home/destinations/homeHaa.avif",
-    width: 500,
-    height: 500,
-    divHeight: "400",
-  },
-];
 export const LocationSection = () => {
   return (
     <div className="p-4 max-w-8xl mt-7">
@@ -105,8 +60,8 @@ export const LocationSection = () => {
                     <Flame className="text-red-500" />
                   </div>
                   <p className="text-white text-sm">
-                    Perched on a knife-edge ridge, Trongsa Dzong -- Bhutan's
-                    largest fortress
+                    Perched on a knife-edge ridge, Trongsa Dzong --
+                    Bhutan&apos;s largest fortress
                   </p>
                   <div className="bg-white rounded-full p-2 mb-2 w-6 h-6 md:w-12 md:h-12 flex justify-center items-center">
                     <ArrowUpRight className="w-5 h-5 text-primary" />
@@ -133,7 +88,7 @@ export const LocationSection = () => {
                     <Flame className="text-red-500" />
                   </div>
                   <p className="text-white text-sm">
-                    Wangdue Phodrang's dramatic landscapes range from
+                    Wangdue Phodrang&apos;s dramatic landscapes range from
                     subtropical lowlands
                   </p>
                   <div className="bg-white rounded-full p-2 mb-2 w-12 flex justify-center items-center">
@@ -191,7 +146,7 @@ export const LocationSection = () => {
                     <Flame className="text-red-500" />
                   </div>
                   <p className="text-white text-sm">
-                    Punakha, Bhutan's former winter capital,
+                    Punakha, Bhutan&apos;s former winter capital,
                   </p>
                   <div className="bg-white rounded-full p-2 mb-2 w-12 flex justify-center items-center">
                     <ArrowUpRight className="w-5 h-5 text-primary" />
@@ -216,8 +171,8 @@ export const LocationSection = () => {
                     <Flame className="text-red-500" />
                   </div>
                   <p className="text-white text-sm">
-                    Bhutan's best-kept secret, the Haa Valley, remained closed
-                    to tourists until 2002.
+                    Bhutan&apos;s best-kept secret, the Haa Valley, remained
+                    closed to tourists until 2002.
                   </p>
                   <div className="bg-white rounded-full p-2 mb-2 w-12 flex justify-center items-center">
                     <ArrowUpRight className="w-5 h-5 text-primary" />

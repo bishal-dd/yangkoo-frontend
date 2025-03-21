@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useOrganization } from "@clerk/nextjs";
 import { Loader } from "@/shared/ui/Loader";
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
@@ -17,10 +16,6 @@ import { Trash2, CircleHelp } from "lucide-react";
 export const Inclusions = () => {
   const params = useParams();
   const roomId = String(params?.roomId);
-  const { organization, isLoaded: orgLoaded } = useOrganization({
-    memberships: true,
-  });
-  const orgId = organization?.id || "";
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const { createHotelRoomInclusionAsync } = useCreateHotelRoomInclusion();
   const { deleteHotelRoomInclusion } = useDeleteHotelRoomInclusion();
@@ -40,7 +35,7 @@ export const Inclusions = () => {
     deleteHotelRoomInclusionState(id);
     deleteHotelRoomInclusion(id);
   };
-  if (!orgLoaded || isLoading) {
+  if (isLoading) {
     return <Loader />;
   }
 

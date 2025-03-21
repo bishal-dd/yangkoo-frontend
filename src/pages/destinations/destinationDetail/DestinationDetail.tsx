@@ -17,6 +17,7 @@ import { Separator } from "@/components/ui/separator";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { destinations } from "@/shared/const";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function DestinationDetail() {
   const params = useParams();
@@ -32,10 +33,12 @@ export default function DestinationDetail() {
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0 h-[500px] bg-black rounded-xl">
-          <img
+          <Image
             src={destination.image || "/placeholder.svg"}
             alt={destination.district}
             className="w-full h-full object-cover opacity-70 rounded-xl"
+            width={500}
+            height={500}
           />
         </div>
         <div className="relative container pt-32 pb-20 p-6">

@@ -7,7 +7,7 @@ import { usePricingStore } from "../../store";
 
 export function useHotelRoomPriceYearsByHotelRoomId(orgId: string) {
   const requestAPI = useRequestAPI();
-  const { addYear, setYears } = usePricingStore();
+  const { setYears } = usePricingStore();
 
   const { data, isLoading, error } = useSuspenseQuery<
     HotelRoomPriceYearsByHotelRoomIdQuery,

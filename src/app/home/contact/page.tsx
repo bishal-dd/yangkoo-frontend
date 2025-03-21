@@ -15,7 +15,7 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="text-muted-foreground text-center mb-12">
-          We're here to assist you with your booking needs
+          We&apos;re here to assist you with your booking needs
         </p>
         <Contact />
       </div>

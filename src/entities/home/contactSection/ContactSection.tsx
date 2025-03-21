@@ -13,7 +13,7 @@ export const ContactSection = () => {
             </div>
             <div>
               <p className="text-white text-3xl font-bold text-center">
-                We're Here to Help with Your Bhutan Travel Plans
+                We&apos;re Here to Help with Your Bhutan Travel Plans
               </p>
             </div>
             <div className="md:w-1/2">

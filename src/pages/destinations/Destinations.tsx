@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { destinations } from "@/shared/const";
 import { Calendar } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -15,10 +16,12 @@ export const Destinations = () => {
               className="group rounded-lg overflow-hidden border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img
+                <Image
                   src={destination.image || "/placeholder.svg"}
                   alt={destination.district}
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  width={500}
+                  height={500}
                 />
               </div>
               <div className="p-4">

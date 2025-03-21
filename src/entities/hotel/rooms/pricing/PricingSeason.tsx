@@ -40,6 +40,10 @@ export const PricingSeason = ({ hotelRoomPriceYearId }: Props) => {
   const onDeleteSeason = (seasonId: string) => {
     deleteHotelRoomPriceSeason(hotelRoomPriceYearId, seasonId);
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <>
       <Suspense fallback={<Loader />}>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useOrganization } from "@clerk/nextjs";
 import { Loader } from "@/shared/ui/Loader";
 import { useParams } from "next/navigation";
 import {
@@ -26,10 +25,6 @@ import { Trash2 } from "lucide-react";
 export const Pricing = () => {
   const params = useParams();
   const roomId = String(params?.roomId);
-  const { organization, isLoaded: orgLoaded } = useOrganization({
-    memberships: true,
-  });
-  const orgId = organization?.id || "";
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const { createHotelRoomPriceYearAsync } = useCreateHotelRoomPriceYear();
   const { createHotelRoomPriceSeasonAsync } = useCreateHotelRoomPriceSeason();
@@ -62,7 +57,7 @@ export const Pricing = () => {
   const onDeleteYear = (id: string) => {
     deleteHotelRoomPriceYear(id);
   };
-  if (!orgLoaded || isLoading) {
+  if (isLoading) {
     return <Loader />;
   }
 

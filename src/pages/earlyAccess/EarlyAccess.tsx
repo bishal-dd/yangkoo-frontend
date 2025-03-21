@@ -14,8 +14,8 @@ export default function EarlyAccess() {
             <span className="text-primary">Simplified</span>
           </h1>
           <p className="text-xl text-gray-600">
-            We're building a better way to book hotels. Sign up now for early
-            access and exclusive deals when we launch.
+            We&apos;re building a better way to book hotels. Sign up now for
+            early access and exclusive deals when we launch.
           </p>
           <div className="max-w-md mx-auto">
             <EarlyAccessForm />

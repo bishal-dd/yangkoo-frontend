@@ -1,8 +1,8 @@
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { PhotoView } from "react-photo-view";
-import { Ghost, Trash2, Upload } from "lucide-react"; // Importing an icon
-import { useRef, useState } from "react";
+import { Trash2, Upload } from "lucide-react"; // Importing an icon
+import { useRef } from "react";
 import { getPresignedUrl } from "@/shared/utils";
 import { useHotelRoomImagesStore } from "../store";
 import { Button } from "@/components/ui/button";
@@ -22,11 +22,7 @@ export function HotelRoomImages({
   onUploadHotelRoomImage,
   onDeleteHotelImage,
 }: Props) {
-  const [uploadProgress, setUploadProgress] = useState<number>(0);
-  const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const { hotelRoomImages } = useHotelRoomImagesStore();
   const MAX_FILE_SIZE_MB = 5;
 
@@ -35,10 +31,7 @@ export function HotelRoomImages({
   ) => {
     const selectedFile = event.target.files?.[0];
     if (selectedFile) {
-      setError(null);
-
       if (selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
-        setError(`File size exceeds the limit of ${MAX_FILE_SIZE_MB} MB.`);
         if (fileInputRef.current) {
           fileInputRef.current.value = "";
         }
@@ -46,8 +39,6 @@ export function HotelRoomImages({
       }
 
       try {
-        setIsUploading(true);
-        setUploadProgress(0);
         const sanitizedFileName = selectedFile.name.replace(/\s+/g, "_");
         const presignedUrl = await getPresignedUrl(
           sanitizedFileName,
@@ -62,7 +53,7 @@ export function HotelRoomImages({
         xhr.upload.onprogress = (event) => {
           if (event.lengthComputable) {
             const progress = (event.loaded / event.total) * 100;
-            setUploadProgress(progress);
+            console.log(`Upload progress: ${progress}%`);
           }
         };
 
@@ -75,21 +66,17 @@ export function HotelRoomImages({
               `${hotelId}/${sanitizedFileName}`,
               imageUrl
             );
-            setPreviewUrl(imageUrl);
           } else {
             throw new Error(xhr.responseText);
           }
-          setIsUploading(false);
         };
 
         xhr.onerror = () => {
-          setIsUploading(false);
           throw new Error(xhr.responseText);
         };
 
         xhr.send(selectedFile);
       } catch (error) {
-        setIsUploading(false);
         throw new Error("Error uploading file:", error as Error);
       }
     }
@@ -105,7 +92,7 @@ export function HotelRoomImages({
 
       <div className="flex flex-col border border-gray-400 rounded-lg p-4">
         <div className="grid grid-cols-2 gap-4">
-          {hotelRoomImages.map((urls, index) => (
+          {hotelRoomImages.map((urls) => (
             <div key={urls.id}>
               <PhotoView src={urls.url}>
                 <Image

@@ -5,6 +5,7 @@ import type React from "react";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface Photo {
   url: string;
@@ -60,10 +61,12 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
             onClick={() => openLightbox(index)}
           >
-            <img
+            <Image
               src={photo.url || "/placeholder.svg"}
               alt={photo.caption}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width={500}
+              height={500}
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
               <p className="text-white p-3 text-sm">{photo.caption}</p>
@@ -107,10 +110,12 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             className="max-w-4xl max-h-[80vh] px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={photos[currentIndex].url || "/placeholder.svg"}
               alt={photos[currentIndex].caption}
               className="max-w-full max-h-[70vh] object-contain mx-auto"
+              width={500}
+              height={500}
             />
             <p className="text-white text-center mt-4">
               {photos[currentIndex].caption}

@@ -5,4 +5,3 @@ export const deleteHotelRoomPriceYearMutation = graphql(`
     deleteHotelRoomPriceYear(id: $id)
   }
 `);
-``;

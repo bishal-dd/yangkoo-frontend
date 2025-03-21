@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Contact from "@/pages/contact/Contact";
 import EarlyAccess from "@/pages/earlyAccess/EarlyAccess";
 
 export const metadata: Metadata = {

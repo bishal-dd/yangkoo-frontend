@@ -29,6 +29,7 @@ export default function EarlyAccessForm() {
       setEmail("");
     } catch (err) {
       setError("There was an error submitting your email. Please try again.");
+      console.error(err);
     } finally {
       setIsSubmitting(false);
     }
@@ -52,10 +53,10 @@ export default function EarlyAccessForm() {
           />
         </svg>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-          You're on the list!
+          You&apos;re on the list!
         </h3>
         <p className="text-gray-600">
-          Thank you for your interest. We'll notify you when we launch.
+          Thank you for your interest. We&apos;ll notify you when we launch.
         </p>
       </div>
     );
