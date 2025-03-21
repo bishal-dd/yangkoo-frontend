@@ -18,7 +18,7 @@ export const SearchSection = () => {
           <h1 className="text-4xl md:text-6xl font-bold">
             Find Your Perfect Stay
           </h1>
-          <p className="text-lg md:text-2xl">
+          <p className="text-lg md:text-2xl hidden md:block lg:block">
             Book hotels, apartments, and more around the world.
           </p>
         </div>
