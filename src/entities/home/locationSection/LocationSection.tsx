@@ -59,11 +59,11 @@ export const LocationSection = () => {
                     </h3>
                     <Flame className="text-red-500" />
                   </div>
-                  <p className="text-white text-sm">
+                  <p className="text-white text-sm hidden md:block lg:block">
                     Perched on a knife-edge ridge, Trongsa Dzong --
                     Bhutan&apos;s largest fortress
                   </p>
-                  <div className="bg-white rounded-full p-2 mb-2 w-6 h-6 md:w-12 md:h-12 flex justify-center items-center">
+                  <div className="bg-white rounded-full p-2 mb-2 w-12 flex justify-center items-center">
                     <ArrowUpRight className="w-5 h-5 text-primary" />
                   </div>
                 </div>
@@ -83,11 +83,11 @@ export const LocationSection = () => {
                 <div className="absolute inset-0 flex flex-col justify-end p-4 gap-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-white text-lg font-semibold">
-                      Wangdue Phodrang
+                      Wangdue
                     </h3>
                     <Flame className="text-red-500" />
                   </div>
-                  <p className="text-white text-sm">
+                  <p className="text-white text-sm hidden md:block lg:block">
                     Wangdue Phodrang&apos;s dramatic landscapes range from
                     subtropical lowlands
                   </p>
@@ -170,7 +170,7 @@ export const LocationSection = () => {
                     <h3 className="text-white text-lg font-semibold">Haa</h3>
                     <Flame className="text-red-500" />
                   </div>
-                  <p className="text-white text-sm">
+                  <p className="text-white text-sm hidden md:block lg:block">
                     Bhutan&apos;s best-kept secret, the Haa Valley, remained
                     closed to tourists until 2002.
                   </p>
