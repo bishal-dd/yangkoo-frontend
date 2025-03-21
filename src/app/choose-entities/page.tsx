@@ -1,4 +1,4 @@
-import { ChooseEntities } from "@/pages/chooseEntities/ChooseEntities";
+import ChooseEntities from "@/pages/chooseEntities/ChooseEntities";
 
 export default function Page() {
   return <ChooseEntities />;

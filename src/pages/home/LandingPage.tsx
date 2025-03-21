@@ -3,7 +3,7 @@ import { ContactSection } from "@/entities/home/contactSection";
 import { LocationSection } from "@/entities/home/locationSection";
 import React from "react";
 
-export const LandingPage = () => {
+const LandingPage = () => {
   return (
     <>
       <SearchSection />
@@ -12,3 +12,5 @@ export const LandingPage = () => {
     </>
   );
 };
+
+export default LandingPage;

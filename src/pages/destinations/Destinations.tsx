@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const Destinations = () => {
+const Destinations = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-12 mx-auto p-4">
@@ -65,3 +65,4 @@ export const Destinations = () => {
     </div>
   );
 };
+export default Destinations;

@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function ChooseEntities() {
+export default function ChooseEntities() {
   const services = [
     {
       title: "Hotel",
