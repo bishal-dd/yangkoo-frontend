@@ -1,7 +1,4 @@
-import { DatePickerWithRange } from "@/components/date-range-picker";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Car, Hotel } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
