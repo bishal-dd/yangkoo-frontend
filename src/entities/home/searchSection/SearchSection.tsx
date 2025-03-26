@@ -15,15 +15,27 @@ export const SearchSection = () => {
         }}
       >
         <div className="text-center space-y-4 ">
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Find Your Perfect Stay
-          </h1>
-          <p className="text-lg md:text-2xl hidden md:block lg:block">
-            Book hotels, apartments, and more around the world.
+          <h1 className="text-4xl md:text-6xl font-bold">Travel To Bhutan</h1>
+          <p className="text-lg md:text-2xl ">
+            Explore the wonders of the Land of the Thunder Dragon
           </p>
         </div>
 
-        {/* Booking Interface */}
+        <div className="p-1  shadow-lg rounded-t-lg  max-w-5xl mx-auto space-y-4 md:mt-32">
+          <div className="flex  flex-row  justify-between md:gap-4 items-center gap-2 md:space-y-0">
+            <div className="rounded-md">
+              <Button size={"lg"} asChild>
+                <Link href={"/home/contact"}>Get A Quote</Link>
+              </Button>
+            </div>
+            <div className="rounded-md">
+              <Button size={"lg"} asChild>
+                <Link href={"/home/destinations"}>Destinations</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+        {/* Booking Interface
         <div className="p-1 backdrop-blur-xl bg-white/20 shadow-lg rounded-t-lg  max-w-5xl mx-auto space-y-4 md:mt-32">
           <div className="flex  flex-row  justify-between md:gap-4 items-center gap-2 md:space-y-0">
             <div className="border border-gray-300 rounded-md">
@@ -39,8 +51,8 @@ export const SearchSection = () => {
               </Button>
             </div>
           </div>
-        </div>
-        <div className="p-6 backdrop-blur-xl bg-white/20 shadow-lg rounded-2xl   max-w-5xl mx-auto space-y-4 ">
+        </div> */}
+        {/* <div className="p-6 backdrop-blur-xl bg-white/20 shadow-lg rounded-2xl   max-w-5xl mx-auto space-y-4 ">
           <div className="flex flex-wrap flex-col  justify-between items-center space-y-4 md:space-y-0">
             <div>
               <Input
@@ -69,7 +81,7 @@ export const SearchSection = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
